@@ -13,6 +13,10 @@ struct HTableEntry // look-up table entry
 
 	struct EqNode
 	{
+	    // Returns true if the nodes of the two entries have the exact same set of constraints on the agents
+	    // specified by h1. Note this is not necessarily a symmetric relation.
+	    // As a minor optimization, we assume {h1.a1, h1.a2} == {h2.a1, h2.a2} because the whole table that uses them
+	    // is dedicated to the same two agents.
 		bool operator() (const HTableEntry& h1, const HTableEntry& h2) const
 		{
 			std::set<Constraint> cons1[2], cons2[2];

@@ -72,7 +72,8 @@ private:
 
 	std::vector<MDDTable> mddTable;
 	int num_released_mdds = 0;
-	std::vector<std::vector<HTable>> hTable;
+	std::vector<std::vector<HTable>> hTable;  // hTable[i][j][entry with node N] holds the cost increase from solving
+                                              // for i and j together under the constraints of node N.
 	int bookingHitTimes = 0;
 	double bookingSearchtime = 0;
 

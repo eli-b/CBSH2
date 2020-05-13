@@ -167,4 +167,5 @@ public:
 
 
 // Match and prune MDD according to another MDD.
+// Returns whether the joint MDD is empty
 bool SyncMDDs(const MDD &mdd1, const MDD& mdd2);
